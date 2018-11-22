@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import throttle from 'lodash.throttle';
+import Timeline from './Timeline';
 
 class App extends Component {
   constructor(props) {
@@ -66,6 +67,8 @@ class App extends Component {
       <div className="App" style={appStyle}>
         <div className="App-container">
           <p>{this.state.percentage}</p>
+
+          <Timeline percentage={this.state.percentage} />
         </div>
         <div className="App-height" />
       </div>
