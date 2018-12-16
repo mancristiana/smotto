@@ -1,5 +1,13 @@
 .Timeline {
   width: 80vw;
+  margin-top: 2em;
+}
+
+@media screen and (max-height: 900px) {
+  .Timeline {
+    position: fixed;
+    bottom: 2em;
+  }
 }
 
 .Timeline-axe {
@@ -14,4 +22,14 @@
   height: 20px;
   width: 2px;
   background-color: #ffffff;
+  position: relative;
+}
+
+.Timeline-date {
+  font-size: 60%;
+  left: -1.5em;
+  top: -1.5em;
+  position: absolute;
+  text-align: center;
+  width: 3em;
 }

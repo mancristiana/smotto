@@ -1,27 +1,20 @@
 .Smotto {
+  overflow: hidden;
+  position: relative;
   width: 400px;
   height: 600px;
-  overflow: hidden;
 }
 
 .Smotto-img {
-  transition: all 400ms ease-out;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
 }
 
-.Smotto-enter {
-  opacity: 0.01;
-}
-
-.Smotto-enter.Smotto-enter-active {
+.Smotto-img.active {
   opacity: 1;
-  transition: opacity 400ms ease-in;
-}
-
-.Smotto-leave {
-  opacity: 1;
-}
-
-.Smotto-leave.Smotto-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
 }

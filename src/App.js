@@ -22,7 +22,6 @@ class App extends Component {
   }
 
   changePercentage(event) {
-    console.log(event);
     this.setState({
       percentage: this.getScrollPercentage()
     });
@@ -67,7 +66,10 @@ class App extends Component {
     return (
       <div className="App" style={appStyle}>
         <div className="App-container">
-          <p>{this.state.percentage}</p>
+          <div className="App-header">
+            <h1>Smotto Growth Interactive Diagram</h1>
+            <p>Scroll to preview</p>
+          </div>
           <Smotto percentage={this.state.percentage} />
           <Timeline percentage={this.state.percentage} />
         </div>

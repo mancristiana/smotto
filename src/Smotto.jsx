@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
+import classNames from 'classnames';
 import './Smotto.css';
 import images from './img/smotto';
 
 class Smotto extends Component {
   render() {
-    const current = Math.floor((images.length * this.props.percentage) / 100);
+    let current = Math.ceil((images.length * this.props.percentage) / 100);
+    current = current === images.length ? current - 1 : current;
+    const imageClasses = index =>
+      classNames('Smotto-img', { active: current === index });
     return (
       <div className="Smotto">
-        <CSSTransitionGroup
-          transitionName="Smotto"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
+        {images.map((img, index) => (
           <img
-            key={current}
-            className="Smotto-img"
-            src={images[current]}
+            key={index}
+            className={imageClasses(index)}
+            src={img}
             alt="Smotto"
           />
-        </CSSTransitionGroup>
+        ))}
       </div>
     );
   }
