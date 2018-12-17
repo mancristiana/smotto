@@ -8,7 +8,6 @@ class Timeline extends Component {
     };
     const birthYear = 1995;
     const age = new Date().getFullYear() - birthYear;
-    console.log(age);
     const date = birthYear + Math.floor((age * this.props.percentage) / 100);
     return (
       <div className="Timeline">
